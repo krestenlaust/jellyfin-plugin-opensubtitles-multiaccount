@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MediaBrowser.Model.Plugins;
 
 namespace Jellyfin.Plugin.OpenSubtitles.Configuration;
@@ -8,17 +9,7 @@ namespace Jellyfin.Plugin.OpenSubtitles.Configuration;
 public class PluginConfiguration : BasePluginConfiguration
 {
     /// <summary>
-    /// Gets or sets the username.
+    /// List of credentials.
     /// </summary>
-    public string Username { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Gets or sets the password.
-    /// </summary>
-    public string Password { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Gets or sets a value indicating whether the credentials are invalid.
-    /// </summary>
-    public bool CredentialsInvalid { get; set; } = false;
+    public List<Credentials> Credentials { get; set; } = new ();
 }
